@@ -1,0 +1,117 @@
+/* Portfolio Section */
+.portfolio-section {
+  padding: 60px 20px;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  font-weight: 700;
+  color: #ffe066;
+}
+
+/* Grid */
+.portfolio-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Card */
+.card {
+  background: #1c1c1c;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.6);
+}
+
+/* Media */
+.media {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.card-img,
+.card-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card-video {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.card:hover .card-video {
+  opacity: 1;
+}
+
+.card-title {
+  margin: 15px 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/* ===================== */
+/* MACHINE-LIKE BUTTON   */
+/* ===================== */
+.read-more {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 10px;
+  color: #fff;
+  background: linear-gradient(90deg, #444, #222);
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  overflow: hidden;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Gear-like glowing animation */
+.read-more::before {
+  content: "";
+  position: absolute;
+  top: 0; left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, #ffe066, transparent);
+  animation: moveLight 2s linear infinite;
+}
+
+@keyframes moveLight {
+  0% { left: -100%; }
+  50% { left: 100%; }
+  100% { left: -100%; }
+}
+
+.read-more:hover {
+  background: linear-gradient(90deg, #ffe066, #ff9900);
+  color: #111;
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #ffe066, 0 0 30px #ff9900;
+}

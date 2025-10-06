@@ -1,0 +1,249 @@
+.whatapp-container {
+  position: fixed;
+  bottom: 155px;
+  right: 31px;
+  background: linear-gradient(135deg, #25d366, #128C7E);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 
+    0 8px 25px rgba(37, 211, 102, 0.4),
+    0 0 0 4px rgba(255, 255, 255, 0.1);
+  z-index: 9999;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: bounceIn 1s ease, pulse 2s infinite;
+  overflow: hidden;
+}
+
+.whatapp-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.whatapp-container:hover::before {
+  left: 100%;
+}
+
+.whatapp-container:hover {
+  transform: scale(1.2) rotate(5deg);
+  box-shadow: 
+    0 12px 35px rgba(37, 211, 102, 0.6),
+    0 0 0 6px rgba(255, 255, 255, 0.15);
+  animation-play-state: paused;
+}
+
+.whatapp-icon {
+  font-size: 2.2rem;
+  color: white;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.whatapp-container:hover .whatapp-icon {
+  transform: scale(1.1);
+}
+
+/* Enhanced Bounce In Animation */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3) rotate(-180deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) rotate(10deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Enhanced Pulse Animation */
+@keyframes pulse {
+  0% {
+    box-shadow: 
+      0 8px 25px rgba(37, 211, 102, 0.4),
+      0 0 0 0 rgba(37, 211, 102, 0.6);
+  }
+  70% {
+    box-shadow: 
+      0 8px 25px rgba(37, 211, 102, 0.4),
+      0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 
+      0 8px 25px rgba(37, 211, 102, 0.4),
+      0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.whatapp-container {
+  animation: bounceIn 1s ease, pulse 2s infinite, float 3s ease-in-out infinite;
+}
+
+/* Click Animation */
+.whatapp-container:active {
+  transform: scale(0.9);
+  transition: transform 0.1s ease;
+}
+
+/* Tooltip on Hover */
+.whatapp-container::after {
+  content: 'Chat with us on WhatsApp';
+  position: absolute;
+  bottom: -40px;
+  right: 50%;
+  transform: translateX(50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 10000;
+}
+
+.whatapp-container:hover::after {
+  opacity: 1;
+  bottom: -45px;
+}
+
+/* --- Enhanced Responsive Design --- */
+@media (max-width: 1024px) {
+  .whatapp-container {
+    width: 65px;
+    height: 65px;
+    bottom: 140px;
+    right: 28px;
+  }
+  .whatapp-icon {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .whatapp-container {
+    width: 60px;
+    height: 60px;
+    bottom: 120px;
+    right: 22px;
+  }
+  .whatapp-icon {
+    font-size: 1.8rem;
+  }
+  
+  .whatapp-container::after {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whatapp-container {
+    width: 55px;
+    height: 55px;
+    bottom: 100px;
+    right: 18px;
+  }
+  .whatapp-icon {
+    font-size: 1.6rem;
+  }
+  
+  .whatapp-container::after {
+    content: 'WhatsApp';
+    font-size: 10px;
+    padding: 5px 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .whatapp-container {
+    width: 50px;
+    height: 50px;
+    bottom: 85px;
+    right: 15px;
+  }
+  .whatapp-icon {
+    font-size: 1.4rem;
+  }
+}
+
+/* --- Z-index Management --- */
+.chatbot-container {
+  z-index: 10001 !important;
+}
+
+.chatbot-container .chatbot-box,
+.chatbot-container .chatbot-header,
+.chatbot-container .chatbot-body {
+  position: relative;
+  z-index: 10001 !important;
+}
+
+.whatapp-container {
+  z-index: 9999;
+  bottom: 160px; /* Adjusted to be clearly above chatbot */
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .whatapp-container {
+    animation: none;
+    transition: none;
+  }
+  
+  .whatapp-container:hover {
+    transform: scale(1.1);
+  }
+  
+  .whatapp-icon {
+    animation: none;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .whatapp-container::after {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+  }
+}
+
+/* High contrast support */
+@media (prefers-contrast: high) {
+  .whatapp-container {
+    border: 2px solid #000;
+  }
+}
+
+/* Performance optimizations */
+.whatapp-container {
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
