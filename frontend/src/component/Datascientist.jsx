@@ -2,17 +2,40 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import Select from "react-select"; // ✅ for searchable dropdowns
 import "./Course.css";
+const API_BASE = import.meta.env.VITE_BASE_URL;
 
 export default function Datascientist() {
   const currentYear = new Date().getFullYear();
 
   const states = [
-    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
-    "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand",
-    "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
-    "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab",
-    "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
-    "Uttar Pradesh", "Uttarakhand", "West Bengal"
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal",
   ];
 
   const [formData, setFormData] = useState({
@@ -48,7 +71,7 @@ export default function Datascientist() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/register", {
+      const res = await fetch(`${API_BASE}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -141,8 +164,7 @@ export default function Datascientist() {
               name="mobileCode"
               value={formData.mobileCode}
               onChange={handleChange}
-              style={{ width: "100px" }}
-            >
+              style={{ width: "100px" }}>
               <option value="+91">🇮🇳 +91</option>
               <option value="+1">🇺🇸 +1</option>
               <option value="+44">🇬🇧 +44</option>
@@ -183,11 +205,15 @@ export default function Datascientist() {
             name="yop"
             required
             value={formData.yop}
-            onChange={handleChange}
-          >
+            onChange={handleChange}>
             <option value="">Select Year</option>
-            {Array.from({ length: currentYear - 1979 }, (_, i) => currentYear - i).map((year) => (
-              <option key={year} value={year}>{year}</option>
+            {Array.from(
+              { length: currentYear - 1979 },
+              (_, i) => currentYear - i
+            ).map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
             ))}
           </select>
 
@@ -202,9 +228,13 @@ export default function Datascientist() {
 
           <label>College State</label>
           <Select
-          className="select-tag"
+            className="select-tag"
             options={states.map((s) => ({ value: s, label: s }))}
-            value={formData.collegeState ? { value: formData.collegeState, label: formData.collegeState } : null}
+            value={
+              formData.collegeState
+                ? { value: formData.collegeState, label: formData.collegeState }
+                : null
+            }
             onChange={(selected) =>
               setFormData({ ...formData, collegeState: selected.value })
             }

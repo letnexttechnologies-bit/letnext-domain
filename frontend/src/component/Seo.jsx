@@ -3,16 +3,40 @@ import Swal from "sweetalert2";
 import Select from "react-select"; // ✅ For searchable state dropdown
 import "./Course.css";
 
+const API_BASE = import.meta.env.VITE_BASE_URL;
+
 export default function Seo() {
   const currentYear = new Date().getFullYear();
 
   const states = [
-    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
-    "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand",
-    "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
-    "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab",
-    "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
-    "Uttar Pradesh", "Uttarakhand", "West Bengal"
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal",
   ];
 
   const [formData, setFormData] = useState({
@@ -48,7 +72,7 @@ export default function Seo() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/register", {
+      const res = await fetch(`${API_BASE}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -133,8 +157,7 @@ export default function Seo() {
               name="mobileCode"
               value={formData.mobileCode}
               onChange={handleChange}
-              style={{ width: "100px" }}
-            >
+              style={{ width: "100px" }}>
               <option value="+91">🇮🇳 +91</option>
               <option value="+1">🇺🇸 +1</option>
               <option value="+44">🇬🇧 +44</option>
@@ -174,14 +197,15 @@ export default function Seo() {
             name="yop"
             required
             value={formData.yop}
-            onChange={handleChange}
-          >
+            onChange={handleChange}>
             <option value="">Select Year</option>
-            {Array.from({ length: 5 }, (_, i) => currentYear - i).map((year) => (
-              <option key={year} value={year}>
-                {year}
-              </option>
-            ))}
+            {Array.from({ length: 5 }, (_, i) => currentYear - i).map(
+              (year) => (
+                <option key={year} value={year}>
+                  {year}
+                </option>
+              )
+            )}
           </select>
 
           <label>% of Marks</label>
@@ -218,7 +242,6 @@ export default function Seo() {
             placeholder="Enter the college"
             className="college-input"
           />
-          
 
           <button type="submit" className="course-submit">
             Submit

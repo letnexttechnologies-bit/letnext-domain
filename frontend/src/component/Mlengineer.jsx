@@ -2,17 +2,40 @@ import React, { useState } from "react";
 import Swal from "sweetalert2";
 import Select from "react-select"; // ✅ searchable dropdown
 import "./Course.css";
+const API_BASE = import.meta.env.VITE_BASE_URL;
 
 export default function Mlengineer() {
   const currentYear = new Date().getFullYear();
 
   const states = [
-    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
-    "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand",
-    "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
-    "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab",
-    "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
-    "Uttar Pradesh", "Uttarakhand", "West Bengal"
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal",
   ];
 
   const [formData, setFormData] = useState({
@@ -48,7 +71,7 @@ export default function Mlengineer() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/register", {
+      const res = await fetch(`${API_BASE}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -81,7 +104,11 @@ export default function Mlengineer() {
     <div className="course-container">
       {/* Left Column */}
       <div className="course-left">
-        <img src="/ml.jpg" alt="Machine Learning Engineer" className="course-img" />
+        <img
+          src="/ml.jpg"
+          alt="Machine Learning Engineer"
+          className="course-img"
+        />
         <h2>Machine Learning Engineer</h2>
 
         <h3>You'll Learn</h3>
@@ -92,7 +119,9 @@ export default function Mlengineer() {
           <li>NLP & Computer Vision</li>
           <li>Real AI Projects</li>
         </ul>
-        <p className="wow">Teach machines to think, learn, and predict outcomes.</p>
+        <p className="wow">
+          Teach machines to think, learn, and predict outcomes.
+        </p>
 
         <h3>Course Duration</h3>
         <p className="wow">80 hours of course + 1 year of support & services</p>
@@ -134,8 +163,7 @@ export default function Mlengineer() {
               name="mobileCode"
               value={formData.mobileCode}
               onChange={handleChange}
-              style={{ width: "100px" }}
-            >
+              style={{ width: "100px" }}>
               <option value="+91">🇮🇳 +91</option>
               <option value="+1">🇺🇸 +1</option>
               <option value="+44">🇬🇧 +44</option>
@@ -172,10 +200,19 @@ export default function Mlengineer() {
           />
 
           <label>YOP (Year of Passing)</label>
-          <select name="yop" required value={formData.yop} onChange={handleChange}>
+          <select
+            name="yop"
+            required
+            value={formData.yop}
+            onChange={handleChange}>
             <option value="">Select Year</option>
-            {Array.from({ length: currentYear - 1979 }, (_, i) => currentYear - i).map((year) => (
-              <option key={year} value={year}>{year}</option>
+            {Array.from(
+              { length: currentYear - 1979 },
+              (_, i) => currentYear - i
+            ).map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
             ))}
           </select>
 
@@ -191,8 +228,14 @@ export default function Mlengineer() {
           <label>College State</label>
           <Select
             options={states.map((s) => ({ value: s, label: s }))}
-            value={formData.collegeState ? { value: formData.collegeState, label: formData.collegeState } : null}
-            onChange={(selected) => setFormData({ ...formData, collegeState: selected.value })}
+            value={
+              formData.collegeState
+                ? { value: formData.collegeState, label: formData.collegeState }
+                : null
+            }
+            onChange={(selected) =>
+              setFormData({ ...formData, collegeState: selected.value })
+            }
             placeholder="Select or type state"
             isSearchable
           />
@@ -208,7 +251,9 @@ export default function Mlengineer() {
             className="college-input"
           />
 
-          <button type="submit" className="course-submit">Submit</button>
+          <button type="submit" className="course-submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>

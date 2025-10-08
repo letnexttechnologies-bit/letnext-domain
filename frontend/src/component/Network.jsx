@@ -3,16 +3,40 @@ import Swal from "sweetalert2";
 import Select from "react-select"; // ✅ for searchable dropdowns
 import "./Course.css";
 
+const API_BASE = import.meta.env.VITE_BASE_URL;
+
 export default function Network() {
   const currentYear = new Date().getFullYear();
 
   const states = [
-    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
-    "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand",
-    "Karnataka", "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur",
-    "Meghalaya", "Mizoram", "Nagaland", "Odisha", "Punjab",
-    "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
-    "Uttar Pradesh", "Uttarakhand", "West Bengal"
+    "Andhra Pradesh",
+    "Arunachal Pradesh",
+    "Assam",
+    "Bihar",
+    "Chhattisgarh",
+    "Goa",
+    "Gujarat",
+    "Haryana",
+    "Himachal Pradesh",
+    "Jharkhand",
+    "Karnataka",
+    "Kerala",
+    "Madhya Pradesh",
+    "Maharashtra",
+    "Manipur",
+    "Meghalaya",
+    "Mizoram",
+    "Nagaland",
+    "Odisha",
+    "Punjab",
+    "Rajasthan",
+    "Sikkim",
+    "Tamil Nadu",
+    "Telangana",
+    "Tripura",
+    "Uttar Pradesh",
+    "Uttarakhand",
+    "West Bengal",
   ];
 
   const [formData, setFormData] = useState({
@@ -48,7 +72,7 @@ export default function Network() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/register", {
+      const res = await fetch(`${API_BASE}/api/register`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -56,7 +80,11 @@ export default function Network() {
       const data = await res.json();
 
       if (res.ok) {
-        Swal.fire("✅ Success!", "Network & Security registration submitted successfully.", "success");
+        Swal.fire(
+          "✅ Success!",
+          "Network & Security registration submitted successfully.",
+          "success"
+        );
         setFormData({
           fullName: "",
           email: "",
@@ -81,7 +109,11 @@ export default function Network() {
     <div className="course-container">
       {/* Left Column */}
       <div className="course-left">
-        <img src="/network.jpg" alt="Network & Security" className="course-img" />
+        <img
+          src="/network.jpg"
+          alt="Network & Security"
+          className="course-img"
+        />
         <h2>Network & Security</h2>
         <h3>You'll Learn</h3>
         <ul>
@@ -108,10 +140,22 @@ export default function Network() {
         <h2>Register Now</h2>
         <form onSubmit={handleSubmit} className="course-form">
           <label>Full Name</label>
-          <input type="text" name="fullName" required value={formData.fullName} onChange={handleChange} />
+          <input
+            type="text"
+            name="fullName"
+            required
+            value={formData.fullName}
+            onChange={handleChange}
+          />
 
           <label>Email ID (@gmail.com only)</label>
-          <input type="email" name="email" required value={formData.email} onChange={handleChange} />
+          <input
+            type="email"
+            name="email"
+            required
+            value={formData.email}
+            onChange={handleChange}
+          />
 
           <label>Mobile</label>
           <div style={{ display: "flex", gap: "10px" }}>
@@ -119,8 +163,7 @@ export default function Network() {
               name="mobileCode"
               value={formData.mobileCode}
               onChange={handleChange}
-              style={{ width: "100px" }}
-            >
+              style={{ width: "100px" }}>
               <option value="+91">🇮🇳 +91</option>
               <option value="+1">🇺🇸 +1</option>
               <option value="+44">🇬🇧 +44</option>
@@ -138,27 +181,60 @@ export default function Network() {
           </div>
 
           <label>Degree</label>
-          <input type="text" name="degree" required value={formData.degree} onChange={handleChange} />
+          <input
+            type="text"
+            name="degree"
+            required
+            value={formData.degree}
+            onChange={handleChange}
+          />
 
           <label>Specialization</label>
-          <input type="text" name="specialization" required value={formData.specialization} onChange={handleChange} />
+          <input
+            type="text"
+            name="specialization"
+            required
+            value={formData.specialization}
+            onChange={handleChange}
+          />
 
           <label>YOP (Year of Passing)</label>
-          <select name="yop" required value={formData.yop} onChange={handleChange}>
+          <select
+            name="yop"
+            required
+            value={formData.yop}
+            onChange={handleChange}>
             <option value="">Select Year</option>
-            {Array.from({ length: currentYear - 1979 }, (_, i) => currentYear - i).map((year) => (
-              <option key={year} value={year}>{year}</option>
+            {Array.from(
+              { length: currentYear - 1979 },
+              (_, i) => currentYear - i
+            ).map((year) => (
+              <option key={year} value={year}>
+                {year}
+              </option>
             ))}
           </select>
 
           <label>% of Marks</label>
-          <input type="number" name="marks" required value={formData.marks} onChange={handleChange} />
+          <input
+            type="number"
+            name="marks"
+            required
+            value={formData.marks}
+            onChange={handleChange}
+          />
 
           <label>College State</label>
           <Select
             options={states.map((s) => ({ value: s, label: s }))}
-            value={formData.collegeState ? { value: formData.collegeState, label: formData.collegeState } : null}
-            onChange={(selected) => setFormData({ ...formData, collegeState: selected.value })}
+            value={
+              formData.collegeState
+                ? { value: formData.collegeState, label: formData.collegeState }
+                : null
+            }
+            onChange={(selected) =>
+              setFormData({ ...formData, collegeState: selected.value })
+            }
             placeholder="Select or type state"
             isSearchable
           />
@@ -173,7 +249,9 @@ export default function Network() {
             placeholder="Enter college name"
           />
 
-          <button type="submit" className="course-submit">Submit</button>
+          <button type="submit" className="course-submit">
+            Submit
+          </button>
         </form>
       </div>
     </div>
