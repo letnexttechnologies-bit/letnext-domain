@@ -3,7 +3,7 @@ import { SitemapStream, streamToPromise } from "sitemap";
 import { createWriteStream } from "fs";
 
 // ✅ Replace with your actual website URL (Netlify or custom domain)
-const BASE_URL = "https://letnextofficial.netlify.app";
+const BASE_URL = "https://letnexttechnologies.com";
 
 // ✅ Add all your important routes here
 const pages = [

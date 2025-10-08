@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }));
 // ✅ Proper CORS setup for both local and Render
 const allowedOrigins = [
   "http://localhost:5173", // your local React app
-  "https://letnextofficial.netlify.app", // your live frontend domain
+  "https://letnexttechnologies.com", // your live frontend domain
   "https://letnext-domain.onrender.com", // your backend domain (Render)
 ];
 
