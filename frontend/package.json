@@ -1,13 +1,11 @@
 {
-  "name": "my-app",
+  "name": "frontend",
   "private": true,
   "version": "1.0.0",
   "type": "module",
   "scripts": {
     "frontend": "vite",
-    "backend": "node backend/server.js",
-    "backend-py": "node backend-py/server.js",
-    "dev": "concurrently \"npm run frontend\" \"npm run backend\" \"npm run backend-py\"",
+    "dev": "vite",
     "start": "npm run dev",
     "build": "vite build",
     "generate-sitemap": "node generate-sitemap.js"
