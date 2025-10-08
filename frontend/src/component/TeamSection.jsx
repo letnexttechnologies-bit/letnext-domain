@@ -80,6 +80,18 @@ const teamMembers = [
     description: "Developing coding skills while contributing to projects and providing code resources for others.",
     img: "Kiruthick1.jpg",
   },
+  {
+    name: "Tarun S",
+    role: "Digital Marketing",
+    description: "Developing marketing expertise while helping businesses thrive in the digital world.",
+    img: "Tarun.jpg",
+  },
+  {
+    name: "Anusri C",
+    role: "Digital Marketing",
+    description: "Building digital growth while connecting audiences and creating meaningful brand stories.",
+    img: "anu.jpg",
+  },
 ];
 
 const TeamSection = () => {

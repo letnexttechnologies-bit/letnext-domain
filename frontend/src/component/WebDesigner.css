@@ -1,4 +1,4 @@
-/* Wrapper ensures footer stays at bottom */
+Wrapper ensures footer stays at bottom
 .webdesigner-wrapper {
   display: flex;
   flex-direction: column;
@@ -383,4 +383,120 @@
 
 .screenshot-card:hover::after {
   opacity: 1;
+}
+
+/* ===== Additional Content Section ===== */
+.webdev-content {
+  background: #0a0a0a;
+  color: #fff;
+  padding: 60px 20px;
+  line-height: 1.8;
+  max-width: 1000px;
+  margin: 0 auto;
+  z-index: 3;
+  font-family: "Arial", sans-serif;
+}
+
+/* Headings */
+.webdev-content h2 {
+  font-size: 2rem;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  border-left: 4px solid #ffffff;
+  padding-left: 10px;
+}
+
+/* Paragraphs */
+.webdev-content p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  color: #cccccc;
+}
+
+/* Lists */
+.webdev-content ul {
+  list-style: disc inside;
+  margin: 15px 0 20px 0;
+  padding-left: 20px;
+}
+
+.webdev-content li {
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+  line-height: 1.6;
+}
+
+/* Links inside content (optional) */
+.webdev-content a {
+  color: #1e90ff;
+  text-decoration: underline;
+}
+
+.webdev-content a:hover {
+  color: #63b3ed;
+}
+
+/* Responsive Design */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .webdev-content {
+    padding: 50px 20px;
+  }
+
+  .webdev-content h2 {
+    font-size: 1.8rem;
+    padding-left: 8px;
+    border-left-width: 3px;
+  }
+
+  .webdev-content p,
+  .webdev-content li {
+    font-size: 1.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .webdev-content {
+    padding: 40px 15px;
+  }
+
+  .webdev-content h2 {
+    font-size: 1.5rem;
+    margin-top: 30px;
+    padding-left: 6px;
+    border-left-width: 3px;
+  }
+
+  .webdev-content p,
+  .webdev-content li {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .webdev-content ul {
+    margin-left: 20px;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .webdev-content {
+    padding: 30px 10px;
+  }
+
+  .webdev-content h2 {
+    font-size: 1.3rem;
+    margin-top: 25px;
+    padding-left: 5px;
+  }
+
+  .webdev-content p,
+  .webdev-content li {
+    font-size: 0.95rem;
+  }
 }

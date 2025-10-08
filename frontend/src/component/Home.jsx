@@ -59,7 +59,7 @@ const services = [
 function Home() {
   const [open, setOpen] = useState(false);
 
-  const text = `As a premier website development company in Erode, Findway Digital is dedicated to delivering high-quality web solutions tailored to your business needs. Whether you're looking to enhance your online presence, improve user experience, boost product sales, or strengthen your brand visibility, our expert web design and development services are vital to achieving your goals..`;
+  const text = `As a premier website development it company in Erode, Findway Digital is dedicated to delivering high-quality web solutions tailored to your business needs. Whether you're looking to enhance your online presence, improve user experience, boost product sales, or strengthen your brand visibility, our expert web design and development services are vital to achieving your goals..`;
   const navigate = useNavigate();
   const [displayedText, setDisplayedText] = useState("");
   const [form, setForm] = useState({
@@ -184,7 +184,7 @@ function Home() {
         <div className="home-overlay"></div>
         <div className="home-content">
           <h1 className="large">
-            Professional Website Design and Development Company
+            Professional Website Design and Development IT Company in Erode 
           </h1>
           <div className="typewriter">
             <p>{displayedText}</p>
@@ -213,17 +213,13 @@ function Home() {
           <div className="step">
             <h3>Your Requirement</h3>
             <p>
-              A Client Requirement is a concise overview that captures the
-              essential needs, goals, and expectations a client has for a
-              particular project, product, or service.
+              At Letnext Technologies, one of the best IT firms in Erode, we recognize that each business has its own special digital requirements. If you need web development, software solutions, online marketing, or IT services, our experienced professionals provide tailored services to increase your business. With a commitment to innovation, reliability, and long-term success for our clients from all industries, we stand as a reliable IT firm in Erode.
             </p>
           </div>
           <div className="step">
             <h3>Find What You Want</h3>
             <p>
-              To help a client "find what you want," the most effective approach
-              is to ensure the website is intuitive, well-organized, and speaks
-              directly to their potential needs.
+              Seeking the ideal digital solution? At Letnext Technologies, a reliable IT company in Erode, we assist you in finding just what you are looking for to drive your business forward. From web development and app development to online marketing and IT advisory services, our professionals deliver innovative and performance-based solutions. As a pioneer IT company in Erode, we guarantee each of our services fulfills your objectives with quality, imagination, and technology perfection.
             </p>
           </div>
           <div className="step">
@@ -569,9 +565,7 @@ function Home() {
           <div className="mv-card">
             <h3>Our Mission</h3>
             <p>
-              To become a trusted technology and creative solutions partner
-              empowering businesses and individuals with innovative digital
-              experiences that inspire growth, creativity, and connection.
+              At Letnext Technologies, our purpose is to enable businesses through innovation and technology. As a top IT company in Erode, we aim to provide high-quality digital solutions that lead to growth and efficiency. Our vision is to fill the gap between ideas and action through assured IT services, innovative strategies, and customer-centric solutions that enable our clients to succeed in today's digital era.
             </p>
           </div>
 
@@ -579,13 +573,7 @@ function Home() {
           <div className="mv-card">
             <h3>Our Vision</h3>
             <p>
-              Deliver cutting-edge websites and apps that combine functionality
-              with creativity. Provide UI/UX and graphic design that enhances
-              brand identity and user engagement. Empower businesses through
-              digital marketing and SEO to reach the right audience. Capture and
-              tell stories with photography and videography that inspire
-              emotions. Build strong social media strategies that drive
-              awareness, interaction, and growth.
+             Our vision at Letnext Technologies is to become the most innovative and reliable IT company in Erode, leading digital transformation for businesses of all sizes. We believe in a future where technology enables every organization to become sustainable, scalable, and successful. As a forward-thinking IT company in Erode, we are committed to providing smart, scalable, and effective solutions that drive progress and set new standards for digital excellence.
             </p>
           </div>
         </div>
@@ -604,15 +592,7 @@ function Home() {
           </div>
           <div className="about-text">
             <p>
-              At LetNext Technologies, we empower businesses to thrive in the
-              digital era through cutting-edge IT services, software
-              development, and digital marketing solutions*. Founded with the
-              vision to bridge technology and business growth, we’ve built a
-              reputation for delivering *innovative, reliable, and scalable
-              solutions* tailored to each client’s unique needs. From custom
-              software applications to data-driven marketing strategies, our
-              team combines technical expertise with creative thinking to help
-              organizations stay ahead in a rapidly evolving digital landscape.
+              Our mission at Letnext Technologies is to emerge as the most innovative and trustworthy IT firm in Erode, spearheading digital transformation for small, medium, and large businesses. We envision a future where technology makes every organization sustainable, scalable, and successful. As a progressive IT Company in Erode, we aim to offer intelligent, scalable, and effective solutions that propel growth and define standards for digital excellence.
             </p>
           </div>
         </div>
@@ -621,13 +601,7 @@ function Home() {
         <div className="about-row reverse">
           <div className="about-text">
             <p>
-              To simplify technology and make it work smarter for businesses
-              enabling them to achieve growth, efficiency, and lasting impact.
-              Innovation driving progress with forward-thinking solutions.
-              Integrity building trust through transparency and commitment.
-              Customer success Putting clients at the center of everything we
-              do. Collaboration harnessing the power of teamwork for better
-              outcomes. Excellence delivering quality without compromise.
+              We are Letnext Technologies, a top IT company in Erode, and we promote an environment that is innovative and dynamic. We have an office that promotes creativity, teamwork, and learning, which sees our team provide the best solutions to clients. As a reliable IT company in Erode, we hold the view that a positive and technologically driven environment not only motivates our staff but also stimulates excellence in all projects we take on.
             </p>
           </div>
           <div className="about-image">

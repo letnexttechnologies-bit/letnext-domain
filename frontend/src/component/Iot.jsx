@@ -1,36 +1,32 @@
 import { useEffect, useState } from "react";
 import "./WebDesigner.css";
 import Footer from "./Footer";
+import Whatapp from "./Whatapp";
+import Chatbot from "./Chatbot";
 
 export default function WebDesigner() {
-  // Scroll to top when this component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // State for gallery
   const [galleryImages, setGalleryImages] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Open gallery
   const openGallery = (images) => {
     setGalleryImages(images);
     setCurrentIndex(0);
   };
 
-  // Close gallery
   const closeGallery = () => {
     setGalleryImages([]);
     setCurrentIndex(0);
   };
 
-  // Next image
   const nextImage = (e) => {
     e.stopPropagation();
     setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
   };
 
-  // Prev image
   const prevImage = (e) => {
     e.stopPropagation();
     setCurrentIndex((prev) =>
@@ -40,6 +36,7 @@ export default function WebDesigner() {
 
   return (
     <div className="webdesigner-wrapper">
+      {/* Hero / Portfolio Section */}
       <section className="webdesigner-section">
         <video className="background-video" autoPlay loop muted>
           <source src="/homevideo.mp4" type="video/mp4" />
@@ -47,7 +44,8 @@ export default function WebDesigner() {
 
         <h2 className="webdesigner-title">Internet Of Things Portfolio</h2>
         <p className="webdesigner-desc">
-          Here are some screenshots of our Internet Of Things projects:
+         Explore our recent Internet Of Things works that merge innovation,
+          design, and technology to create seamless digital experiences.
         </p>
 
         <div className="screenshot-grid">
@@ -58,44 +56,8 @@ export default function WebDesigner() {
             }
           >
             <img src="/iot1.png" alt="Project 1" />
-            <h3>Project One</h3>
+            <h3>Sample Internet Of Things</h3>
           </div>
-          {/* <div
-            className="screenshot-card"
-            onClick={() =>
-              openGallery(["/web4.png", "/web5.png", "/web6.png"])
-            }
-          >
-            <img src="/web4.png" alt="Project 2" />
-            <h3>Project Two</h3>
-          </div>
-          <div
-            className="screenshot-card"
-            onClick={() =>
-              openGallery(["/web7.png", "/web8.png", "/web9.png"])
-            }
-          >
-            <img src="/web7.png" alt="Project 3" />
-            <h3>Project Three</h3>
-          </div>
-          <div
-            className="screenshot-card"
-            onClick={() =>
-              openGallery(["/web10.png", "/web11.png", "/web12.png"])
-            }
-          >
-            <img src="/web10.png" alt="Project 3" />
-            <h3>Project Four</h3>
-          </div>
-          <div
-            className="screenshot-card"
-            onClick={() =>
-              openGallery(["/web13.png", "/web14.png", "/web15.png"])
-            }
-          >
-            <img src="/web13.png" alt="Project 3" />
-            <h3>Project Five</h3>
-          </div> */}
         </div>
       </section>
 
@@ -153,8 +115,111 @@ export default function WebDesigner() {
         </div>
       )}
 
-      {/* Footer stays at the bottom */}
-      {/* <Footer /> */}
+      {/* ===== Content Section ===== */}
+      <section className="webdev-content">
+        <h2>Internet of Things (IoT) Solutions by LetNext Technologies</h2>
+        <p>
+          In the fast-paced digital era, companies are always looking for innovative means to boost efficiency, maximize operations, and provide superior experiences. The Internet of Things (IoT) is no longer a vision but a reality shaping industries globally. At LetNext Technologies, one of the top IT companies in Erode, we deliver advanced IoT solutions tailored to your business.
+        </p>
+
+        <h2>Understanding IoT</h2>
+        <p>
+          IoT is an interconnected network of physical objects like sensors, appliances, cars, and industrial equipment that collect, exchange, and analyze data via the internet. Devices interact in real-time, providing opportunities for automation, optimization, and innovation.
+        </p>
+        <ul>
+          <li>Real-Time Monitoring: Monitor processes and performance instantly.</li>
+          <li>Cost Reduction: Optimize energy consumption and supply chains.</li>
+          <li>Improved Customer Experience: Smart devices provide personalized and predictive services.</li>
+        </ul>
+
+        <h2>Our IoT Services</h2>
+        <ul>
+          <li>
+            <strong>IoT Strategy and Consulting:</strong> Determine IoT opportunities, assess infrastructure, and define adoption roadmap.
+          </li>
+          <li>
+            <strong>IoT Application Development:</strong> Mobile/web apps, smart device integration, predictive analytics.
+          </li>
+          <li>
+            <strong>IoT Device Management:</strong> Secure onboarding, remote monitoring, and proactive maintenance.
+          </li>
+          <li>
+            <strong>IoT Analytics and Data Insights:</strong> Real-time dashboards, predictive maintenance, behavioral insights.
+          </li>
+        </ul>
+
+        <h2>Industry Applications</h2>
+        <ul>
+          <li>
+            <strong>Smart Manufacturing:</strong> Automated line monitoring, predictive maintenance, energy management.
+          </li>
+          <li>
+            <strong>Healthcare IoT:</strong> Remote patient monitoring, equipment tracking, real-time data analysis.
+          </li>
+          <li>
+            <strong>Smart Cities:</strong> Traffic management, waste management, environmental monitoring.
+          </li>
+          <li>
+            <strong>Agriculture IoT:</strong> Precision agriculture, smart irrigation, livestock tracking.
+          </li>
+        </ul>
+
+        <h2>Why Choose LetNext Technologies</h2>
+        <ul>
+          <li>Industry Domain Expertise across manufacturing, healthcare, agriculture, logistics, and smart cities.</li>
+          <li>Custom Solutions tailored to business needs.</li>
+          <li>Security-first systems with scalable architecture.</li>
+          <li>Proven Track Record delivering measurable efficiency and ROI.</li>
+        </ul>
+
+        <h2>Success Stories</h2>
+        <ul>
+          <li>
+            <strong>Smart Factory:</strong> 30% less downtime and 20% more productivity.
+          </li>
+          <li>
+            <strong>Healthcare IoT:</strong> Remote patient monitoring increased efficiency and care quality.
+          </li>
+          <li>
+            <strong>Smart Agriculture:</strong> Auto-irrigation increased yield by 25%.
+          </li>
+        </ul>
+
+        <h2>IoT Features</h2>
+        <ul>
+          <li>Seamless Connectivity</li>
+          <li>Real-Time Data Access</li>
+          <li>Predictive Analytics</li>
+          <li>Secure Infrastructure</li>
+          <li>Scalable Architecture</li>
+        </ul>
+
+        <h2>Our Implementation Process</h2>
+        <ul>
+          <li>Requirement Analysis</li>
+          <li>Solution Design</li>
+          <li>Implementation</li>
+          <li>Monitoring & Optimization</li>
+          <li>Maintenance & Support</li>
+        </ul>
+
+        <h2>Future of IoT</h2>
+        <ul>
+          <li>Edge Computing for low latency</li>
+          <li>AI & Machine Learning Integration</li>
+          <li>5G Connectivity for real-time apps</li>
+          <li>Sustainability & energy monitoring</li>
+        </ul>
+
+        <h2>Get Started with LetNext Technologies</h2>
+        <p>
+          Elevate your business with LetNext Technologies. Our team provides intelligent, scalable, and productive IoT solutions. Reach out to us today and bring your vision to life.
+        </p>
+      </section>
+
+      {/* Footer */}
+     <Whatapp/>
+     <Chatbot/>
     </div>
   );
 }
