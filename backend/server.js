@@ -39,9 +39,6 @@ app.use(
   })
 );
 
-// Handle preflight OPTIONS requests
-app.use(cors());
-
 // ================================
 // ✅ MongoDB Connection
 // ================================
