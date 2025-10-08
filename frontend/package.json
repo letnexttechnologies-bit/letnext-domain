@@ -7,7 +7,7 @@
     "frontend": "vite",
     "dev": "vite",
     "start": "npm run dev",
-    "build": "npm run build",
+    "build": "vite build",
     "generate-sitemap": "node generate-sitemap.js"
   },
   "dependencies": {
